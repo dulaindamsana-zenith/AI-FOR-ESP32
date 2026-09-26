@@ -28,10 +28,12 @@ jobs:
           pip install platformio
 
       - name: Compile Project
-        run: pio run
+        run: |
+          cd "CYD-AI-CHAT"
+          pio run
 
       - name: Upload Binary Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: cyd-ai-binaries
-          path: .pio/build/**/*.bin
+          path: CYD-AI-CHAT/.pio/build/**/*.bin
